@@ -15,10 +15,17 @@
 
         function inserisciVideoYoutube($video, $larPerc, $altPxl) {
             echo "<h2>". $video["titolo"] ."</h2>";
-            echo "<iframe src='https://www.youtube.com/embed/". $video["idVideo"] ."' style='height: {$altPxl}px; widht:{$larPerc}%'></iframe>";
+            echo "<iframe src='https://www.youtube.com/embed/". $video["idVideo"] ."' style='height: {$altPxl}px; width:{$larPerc}%'></iframe>";
         }
 
-        inserisciVideoYoutube($listaVideo[0], 50, 250); 
+        $h = 125;
+        $w = 25;
+
+        for ($i = 0; $i < count($listaVideo); $i++) {
+            $h += 125;
+            $w += 25;
+            inserisciVideoYoutube($listaVideo[$i], $w, $h);
+        }
     ?>
 </body>
 </html>
